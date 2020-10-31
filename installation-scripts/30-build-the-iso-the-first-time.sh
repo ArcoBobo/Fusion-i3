@@ -29,18 +29,18 @@ echo
 	desktop="i3"
 	lightdmDesktop="i3"
 
-	arcolinuxVersion='v20.11.9'
+	arcoboboVersion='v20.11.9'
 
-	isoLabel='arcolinuxb-'$desktop'-'$arcolinuxVersion'-x86_64.iso'
+	isoLabel='arcobobob-'$desktop'-'$arcoboboVersion'-x86_64.iso'
 
 	# setting of the general parameters
-	buildFolder=$HOME"/arcolinuxb-build"
-	outFolder=$HOME"/ArcoLinuxB-Out"
+	buildFolder=$HOME"/arcobobob-build"
+	outFolder=$HOME"/ArcoBoboB-Out"
 	archisoVersion=$(sudo pacman -Q archiso)
 	
 	echo "################################################################## "		
 	echo "Building the desktop                   : "$desktop
-	echo "Bulding version                        : "$arcolinuxVersion
+	echo "Bulding version                        : "$arcoboboVersion
 	echo "Iso label                              : "$isoLabel
 	echo "Do you have the right archiso version? : "$archisoVersion
 	echo "Build folder                           : "$buildFolder
@@ -129,7 +129,7 @@ echo
 	echo
 	echo "Git clone the latest ArcoLinux-iso from github"
 	echo
-	git clone https://github.com/arcolinux/arcolinux-iso ../work
+	git clone https://github.com/ArcoBobo/Fusion-iso ../work
 
 echo
 echo "################################################################## "
@@ -171,18 +171,18 @@ echo
 	#Setting variables for -B variant
 
 	#profiledef.sh
-	oldname1='iso_name=arcolinux'
-	newname1='iso_name=arcolinuxb-'$desktop
+	oldname1='iso_name=arcobobo'
+	newname1='iso_name=arcobobob-'$desktop
 
-	oldname2='iso_label="arcolinux'
-	newname2='iso_label="arcolinuxb-'$desktop
+	oldname2='iso_label="arcobobo'
+	newname2='iso_label="arcobobob-'$desktop
 
-	oldname3='ArcoLinux'
-	newname3='ArcoLinuxB-'$desktop
+	oldname3='ArcoBobo'
+	newname3='ArcoBoboB-'$desktop
 
 	#hostname
-	oldname4='ArcoLinux'
-	newname4='ArcoLinuxB-'$desktop
+	oldname4='ArcoBobo'
+	newname4='ArcoBoboB-'$desktop
 
 	#lightdm.conf user-session
 	oldname5='user-session=xfce'
@@ -264,7 +264,7 @@ echo
 
 	[ -d $outFolder ] || mkdir $outFolder
 	echo "Copying the iso to the out folder : "$outFolder
-	cp $buildFolder/archiso/out/arcolinux* $outFolder
+	cp $buildFolder/archiso/out/arcobobo* $outFolder
 
 echo
 echo "###################################################################"
@@ -293,7 +293,7 @@ echo
 	echo
 	echo "Moving pkglist.x86_64.txt"
 	echo "########################"
-	cp $buildFolder/archiso/work/iso/arch/pkglist.x86_64.txt  $outFolder/$isoLabel".iso.pkglist.txt"
+	cp $buildFolder/archiso/work/iso/arch/pkglist.x86_64.txt  $outFolder/$isoLabel".pkglist.txt"
 	
 
 echo
